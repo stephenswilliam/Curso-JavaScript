@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+     <style>
+         body {
+             font: normal 18pt Arial;
+         }
+         input{
+             font: normal 18pt Arial;
+             width: 200px;
+         } 
+         input#btn{
+             width: 120px;
+         }
+     </style>
+</head>
+<body>
+    <h1>Consulta de Nacionalidade</h1>
+    País de nascimento
+        <input type="text" name="txtPaís" id="txtPaís" placeholder="País">
+        <input type="button" value="Consultar" onclick="consultar()" id="btn">
+    <div id="nac"></div>
+    <script>
+        function consultar(){
+            var p = window.document.getElementById('txtPaís').value
+            var  país = p.toUpperCase()
+            if (país == 'BRASIL') {
+                window.document.getElementById('nac').innerHTML = `<p>Quem nasceu no ${p} é <strong>Brasileiro</strong>!`
+            } else {
+                window.document.getElementById('nac').innerHTML = `<p>Quem nasceu no(a) ${p} é <strong>Estrangeiro</strong>!`
+            }
+        }
+    </script>
+</body>
+</html>
